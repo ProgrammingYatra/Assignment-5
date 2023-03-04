@@ -12,8 +12,8 @@ function App() {
     async function fetchQuestion() {
       const response = await fetch(`${API_URL}?QuestionID=${questionId}`);
       const data = await response.json();
-      console.log(data);
-      setQuestion(data.Question);
+      console.log(data.question);
+      setQuestion(data.question);
     }
 
     fetchQuestion();
@@ -45,7 +45,7 @@ function App() {
           <div>
             <h4>+++++++++++++++</h4>
             <span>
-              {" "}
+              {question && question}
               {
                 "Let \\( F(x) = \\int_{h(x)}^{g(x)}f(t)dt \\) such that function g(x) and h(x) are defined on \\( [a,b] \\) and differentiable at all points \\( x\\in[a,b] \\), then \\( \\frac{d}{dx}F(x) = ? \\)"
               }
